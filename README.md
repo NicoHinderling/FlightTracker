@@ -1,5 +1,4 @@
 # FlightTracker
-<<<<<<< HEAD
 
 ### Idea behind this project
 *Insert Short bio*
@@ -27,4 +26,3 @@ I would recommend using a virtual environment for this, but it's definitely not 
 
 more to come!
 =======
->>>>>>> 4d54b802c1329486a3936be410a414349653a979

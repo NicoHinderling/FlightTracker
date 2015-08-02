@@ -1,28 +1,59 @@
 # FlightTracker
 
-### Idea behind this project
+### Backstory
 *Insert Short bio*
 
+#How to set this up Locally!
 
-### How to Set this up Locally!
+### Set up our Cassandra Database
+1.) [Download](http://cassandra.apache.org/download/) Cassandra
 
-Step one:
+2.) Untar, put her in /opt/, and set the other directories:
 
-The first thing we're going to have to do is set up a Cassandra instance locally! To do this, I found [this](https://github.com/hsgubert/cassandra_migrations/wiki/Preparing-standalone-Cassandra-in-local-machine) very helpful!
+```
+$ tar -zxvf apache-cassandra-2.1.8-bin.tar.gz
+$ sudo mv apache-cassandra-2.1.8 /opt/cassandra  
+$ sudo mkdir -p /var/log/cassandra
+$ sudo mkdir -p /var/lib/cassandra
+```
+**_Note_ :** _You may have to change the permissions of these directories. If so, do_:
 
-To reiterate:
+```
+$ sudo chown -R _NAME_ /var/log/cassandra
+$ sudo chown -R _NAME_ /var/lib/cassandra
+```
+3.) Add her binaries to our path:
+
+```
+$ vim ~/.bashrc
+$ export PATH=$PATH:/opt/cassandra/bin (Put this in, and exit vim)
+$ . ~/.bashrc
+```
+**And we're good to go!**
+
+To start up the DB, type:
+
 ```
 $ cassandra -f
 ```
-will start up the database. Now that we have it running, we clone this repo.
+
+If you have any issues, refer to [this](https://github.com/hsgubert/cassandra_migrations/wiki/Preparing-standalone-Cassandra-in-local-machine)!
+
+### Clone this Repository
+Before we do this, I thought I'd plug [Virtual-Burrito](https://github.com/brainsik/virtualenv-burrito)! Not necessary, but very convenient for Python projects :)
+
 ```
 $ git clone https://github.com/NicoHinderling/FlightTracker.git
 $ cd FlightTracker
 $ pip install -r requirements.txt
+$ mv credentials_example.py credentials.py
 ```
-I would recommend using a virtual environment for this, but it's definitely not necessary! 
+Now add your QPX key into the creds file. If you're unfamilar, [here](https://developers.google.com/api-client-library/python/guide/aaa_apikeys)'s how to get an API key!
 
+And finally, simply do:
 
+```
+$ python main.py
+```
 
-more to come!
-=======
+Noiceeeee

@@ -1,4 +1,4 @@
-# FlightTracker
+# :airplane: FlightTracker :airplane:
 
 ### Backstory
 As a college student raised in California but studying in Boston, me having to purchase flight tickets was inevitable. Every time the topic would come up, my mom would warn me, "Buy them early! Their always cheapest several months in advance!" When I was buying a ticket for my recent trip to China, my advisor told me how "tickets are just cheapest a couple days before the flight itself!" 

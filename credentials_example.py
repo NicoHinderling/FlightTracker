@@ -1,3 +1,0 @@
-#API Credentials
-
-QPX = ''

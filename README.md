@@ -78,5 +78,5 @@ and we're runnin', baby!
 
 **Sidenote:** If you want to _query_ your data, just open another tab and do `python queryCassandra.py`. I added this for the sake of convenience so doing a SQL `SELECT` command would be as simple as a bash command.
 
-###License
+#License
 MIT

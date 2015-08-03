@@ -1,4 +1,4 @@
-credentials.py
+env_variables.py
 data.txt
 *.pyc
 .DS_Store

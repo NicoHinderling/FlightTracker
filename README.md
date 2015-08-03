@@ -1,7 +1,24 @@
 # FlightTracker
 
 ### Backstory
-*Insert Short bio*
+As a college student raised in California but studying in Boston, me having to purchase flight tickets was inevitable. Every time the topic would come up, my mom would warn me, "Buy them early! Their always cheapest several months in advance!" When I was buying a ticket for my recent trip to China, my advisor told me how "tickets are just cheapest a couple days before the flight itself!" 
+
+I remember even Googling "`Best time to buy a Plane ticket`", which informed me that apparently _Tuesdays around noon_ are the weekly sweet spot. Well it's time to **DISPELL THE MYTHS**! 
+
+I will be aggregating data for the next couple of months and plan to publish what I find around late December/early January!
+
+### My Current Intentions
+Try to see trends in the price fluctuation in respect to:
+
+- Specific day of week/time of day that correlates to price
+- Best “amount of time left” until flight leaves for price
+- Which Company
+
+Some other possible variables that I may encorporate in the future could be:
+
+- Region (from which location to which location)
+- Any Difference when considering Round Trip flights
+- (Feel free to suggest any others! :smile: )
 
 #How to set this up Locally!
 
@@ -46,9 +63,10 @@ Before we do this, I thought I'd plug [Virtual-Burrito](https://github.com/brain
 $ git clone https://github.com/NicoHinderling/FlightTracker.git
 $ cd FlightTracker
 $ pip install -r requirements.txt
-$ mv credentials_example.py credentials.py
+$ mv env_variables_example.py env_variables.py
 ```
-Now add your QPX key into the creds file. If you're unfamilar, [here](https://developers.google.com/api-client-library/python/guide/aaa_apikeys)'s how to get an API key!
+Now add your origin, destination, date for the flight, and QPX key into the creds file
+( If you're unfamilar, [here](https://developers.google.com/api-client-library/python/guide/aaa_apikeys)'s how to get a Google API key!).
 
 And finally, simply do:
 
@@ -56,4 +74,9 @@ And finally, simply do:
 $ python main.py
 ```
 
-Noiceeeee
+and we're runnin', baby!
+
+**Sidenote:** If you want to _query_ your data, just open another tab and do `python queryCassandra.py`. I added this for the sake of convenience so doing a SQL `SELECT` command would be as simple as a bash command.
+
+###License
+MIT

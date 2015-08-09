@@ -20,6 +20,18 @@ Some other possible variables that I may encorporate in the future could be:
 - Any Difference when considering Round Trip flights
 - (Feel free to suggest any others! :smile: )
 
+### Metrics
+I have decided to choose two flights the day of December 19th (2015). I imagine this date should yield especially volatile prices, so it should be an interesting base line. 
+
+**Specific Tickets:**
+
+1.) BOS -> LAX (12/19/15)
+
+2.) NY -> MIA (12/19/15)
+
+ 
+(_Data has begun being aggregated starting 8/8/15_)
+
 #How to set this up Locally!
 
 ### Set up our Cassandra Database

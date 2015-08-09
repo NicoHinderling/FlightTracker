@@ -6,7 +6,7 @@ class FlightTrackerCluster(object):
         cluster = Cluster()
         self.session = cluster.connect()
 
-    def createKeySpace(self, title, class_type='SimpleStrategy', replication_factor='3'):
+    def createKeySpace(self, title, class_type='SimpleStrategy', replication_factor='2'):
         self.session.execute("CREATE KEYSPACE {} WITH REPLICATION = \
         {{ 'class' : '{}', 'replication_factor' : {} }};\
         ".format(title, class_type, replication_factor))
@@ -29,7 +29,7 @@ class FlightTrackerCluster(object):
         self.session.execute("CREATE TABLE {} ({});".format(tableName, parameters))
 
     def deleteTable(self, tableName):
-        double_check = raw_input('Are you sure? Type "Y" to confirm: ')
+        double_check = raw_input('Are you REALLY sure? Type "Y" to confirm: ')
         if double_check == 'Y':
             self.session.execute("DROP TABLE {};".format(tableName))
         else:

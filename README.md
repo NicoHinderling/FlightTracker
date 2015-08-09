@@ -3,7 +3,7 @@
 ### Backstory
 As a college student raised in California but studying in Boston, me having to purchase flight tickets was inevitable. Every time the topic would come up, my mom would warn me, "Buy them early! Their always cheapest several months in advance!" When I was buying a ticket for my recent trip to China, my advisor told me how "tickets are just cheapest a couple days before the flight itself!" 
 
-I remember even Googling `Best time to buy a Plane ticket`, which informed me that apparently _Tuesdays around noon_ are the weekly sweet spot. Well it's time to **DISPELL THE MYTHS**! 
+I remember even Googling "`Best time to buy a Plane ticket`", which informed me that apparently _Tuesdays around noon_ are the weekly sweet spot. Well it's time to **DISPELL THE MYTHS**! 
 
 I will be aggregating data for the next couple of months and plan to publish what I find around late December/early January!
 
@@ -30,7 +30,7 @@ I have decided to choose two flights the day of December 19th (2015). I imagine 
 2.) NY -> MIA (12/19/15)
 
  
-(_Data has begun being aggregated starting 8/8/15_)
+(**8/8/15:** _Data has begun being aggregated starting_)
 
 #How to set this up Locally!
 

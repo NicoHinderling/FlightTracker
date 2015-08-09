@@ -30,7 +30,7 @@ I have decided to choose two flights the day of December 19th (2015). I imagine 
 2.) NY -> MIA (12/19/15)
 
  
-(**8/8/15:** _Data has begun being aggregated starting_)
+(**August 9th, 2015:** _Data has begun being aggregated!_)
 
 #How to set this up Locally!
 

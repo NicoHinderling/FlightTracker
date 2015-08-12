@@ -1,11 +1,11 @@
 from db_commands import FlightTrackerCluster
 
 myCluster = FlightTrackerCluster()
-myCluster.changeKeySpace('plane')
+myCluster.changeKeySpace('tixtix')
 
 quit = False
 
-print ("\nAvailable queries: 'time', 'price', 'carrier', 'origin', 'destination', or 'departure_date'\n")
+print ("\nAvailable queries: 'time', 'price', 'carrier', 'origin', 'destination', 'departure_date' or 'concat'\n")
 while quit == False:
     key = raw_input('Enter a key name (or type Q to quit): ')
     if key != 'Q':

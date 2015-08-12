@@ -83,7 +83,7 @@ Now add your origin, destination, date for the flight, and QPX key into the cred
 And finally, simply do:
 
 ```
-$ python main.py
+$ python worker.py
 ```
 
 and we're runnin', baby!

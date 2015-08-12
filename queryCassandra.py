@@ -1,7 +1,7 @@
 from db_commands import FlightTrackerCluster
 
 myCluster = FlightTrackerCluster()
-myCluster.changeKeySpace('tixtix')
+myCluster.changeKeySpace('plane')
 
 quit = False
 

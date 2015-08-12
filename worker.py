@@ -39,6 +39,8 @@ def writeToCassandra(params, time, day_of_week, origin, destination, departure_d
         price = data['trips']['tripOption'][0]['saleTotal']
         carrier = data['trips']['tripOption'][0]['slice'][0]['segment'][0]['flight']['carrier']
 
+        time = time + origin
+        
         concat = time + ", " +  day_of_week + ", " + price + ", " + carrier + ", " + origin + ", " + destination + ", " + departure_date
         print concat + "    [" + concat + "]"
 

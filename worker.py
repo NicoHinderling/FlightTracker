@@ -10,9 +10,11 @@ from env_variables import QPX_API_KEY, ORIGIN_ONE, DESTINATION_ONE, ORIGIN_TWO, 
 days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
 myCluster = FlightTrackerCluster()
-# myCluster.createKeySpace('tixtix')
-myCluster.changeKeySpace('tixtix')
 
+#Comment out this line after you've created the Key Space the first time
+myCluster.createKeySpace('Tickets')
+
+myCluster.changeKeySpace('Tickets')
 
 first = raw_input('Are we starting Fresh? (Type Y if so): ')
 if first == 'Y':

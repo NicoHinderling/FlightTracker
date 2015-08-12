@@ -1,5 +1,4 @@
 from cassandra.cluster import Cluster
-from db_commands_helpers import getParams
 
 class FlightTrackerCluster(object):
     def __init__(self):

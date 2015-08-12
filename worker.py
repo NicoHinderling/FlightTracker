@@ -12,9 +12,9 @@ days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sun
 myCluster = FlightTrackerCluster()
 
 #Comment out this line after you've created the Key Space the first time
-myCluster.createKeySpace('Tickets')
+myCluster.createKeySpace('plane')
 
-myCluster.changeKeySpace('Tickets')
+myCluster.changeKeySpace('plane')
 
 first = raw_input('Are we starting Fresh? (Type Y if so): ')
 if first == 'Y':

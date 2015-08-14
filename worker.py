@@ -4,7 +4,7 @@ from datetime import datetime
 from time import sleep
 from db_commands import FlightTrackerCluster
 from env_variables import QPX_API_KEY, ORIGIN_ONE, DESTINATION_ONE, ORIGIN_TWO, DESTINATION_TWO, DEPARTURE_DATE
-from env_variables import ORIGIN_THREE, DESTINATION_THREE, ORIGIN_FOUR, DESTINATION_FOUR
+from env_variables import QPX_API_KEY_TWO, ORIGIN_THREE, DESTINATION_THREE, ORIGIN_FOUR, DESTINATION_FOUR
 # from env_variables import RETURN_DATE
 
 ############################################## Set-Up ################################################
@@ -12,8 +12,8 @@ days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sun
 
 myCluster = FlightTrackerCluster()
 
-#Comment out this line after you've created the Key Space the first time
-myCluster.createKeySpace('plane')
+#Uncomment out this line if you want to create the Key Space the first time
+# myCluster.createKeySpace('plane')
 
 myCluster.changeKeySpace('plane')
 

@@ -1,7 +1,6 @@
 import json
 import requests
 from datetime import datetime
-from time import sleep
 from db_commands import FlightTrackerCluster
 from env_variables import QPX_API_KEY, ORIGIN_ONE, DESTINATION_ONE, ORIGIN_TWO, DESTINATION_TWO, DEPARTURE_DATE
 from env_variables import QPX_API_KEY_TWO, ORIGIN_THREE, DESTINATION_THREE, ORIGIN_FOUR, DESTINATION_FOUR
@@ -11,19 +10,14 @@ from env_variables import QPX_API_KEY_TWO, ORIGIN_THREE, DESTINATION_THREE, ORIG
 days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
 myCluster = FlightTrackerCluster()
-
-#Uncomment out this line if you want to create the Key Space the first time
-# myCluster.createKeySpace('plane')
-
+myCluster.createKeySpace('plane')
 myCluster.changeKeySpace('plane')
 
+'''
 first = raw_input('Are we starting Fresh? (Type Y if so): ')
 if first == 'Y':
-    myCluster.createTable('Tickets', ['time', 'day', 'price', 'carrier', 'origin', 'destination', 'departure_date', 'concat'])
-    print("\nStarting up the script! \n")
-else:
-    print("\nStarting up the script! \n")
-
+'''
+myCluster.createTable('tickets', ['time', 'day', 'price', 'carrier', 'origin', 'destination', 'departure_date', 'concat'])
 
 params_one = myCluster.getParams(ORIGIN_ONE, DESTINATION_ONE, DEPARTURE_DATE, 100)
 params_two = myCluster.getParams(ORIGIN_TWO, DESTINATION_TWO, DEPARTURE_DATE, 100)
@@ -53,20 +47,18 @@ def writeToCassandra(params, time, day_of_week, origin, destination, departure_d
 ############################################## Set-Up ################################################
 
 ############################################## SCRIPT ################################################
-while True:
-    print "DATA:   Hour-Day-Month-Year, Price, Carrier, Origin, Destination, Date, [Everything together]"
-    print "---------------------------------------------------------------------------------------------"
+print "DATA:   Hour-Day-Month-Year, Price, Carrier, Origin, Destination, Date, [Everything together]"
+print "---------------------------------------------------------------------------------------------"
 
-    time = str(datetime.now().hour) + "-" + str(datetime.now().day) + "-" + \
-        str(datetime.now().month) + "-" + str(datetime.now().year)
-    day_of_week = datetime.today().weekday()
-    which_day = days[day_of_week]
+time = str(datetime.now().hour) + "-" + str(datetime.now().day) + "-" + \
+    str(datetime.now().month) + "-" + str(datetime.now().year)
+day_of_week = datetime.today().weekday()
+which_day = days[day_of_week]
 
-    writeToCassandra(params_one, time, which_day, ORIGIN_ONE, DESTINATION_ONE, DEPARTURE_DATE, QPX_API_KEY)
-    writeToCassandra(params_two, time, which_day, ORIGIN_TWO, DESTINATION_TWO, DEPARTURE_DATE, QPX_API_KEY)
-    writeToCassandra(params_three, time, which_day, ORIGIN_THREE, DESTINATION_THREE, DEPARTURE_DATE, QPX_API_KEY_TWO)
-    writeToCassandra(params_four, time, which_day, ORIGIN_FOUR, DESTINATION_FOUR, DEPARTURE_DATE, QPX_API_KEY_TWO)
-    sleep(3600)
+writeToCassandra(params_one, time, which_day, ORIGIN_ONE, DESTINATION_ONE, DEPARTURE_DATE, QPX_API_KEY)
+writeToCassandra(params_two, time, which_day, ORIGIN_TWO, DESTINATION_TWO, DEPARTURE_DATE, QPX_API_KEY)
+writeToCassandra(params_three, time, which_day, ORIGIN_THREE, DESTINATION_THREE, DEPARTURE_DATE, QPX_API_KEY_TWO)
+writeToCassandra(params_four, time, which_day, ORIGIN_FOUR, DESTINATION_FOUR, DEPARTURE_DATE, QPX_API_KEY_TWO)
 ############################################## SCRIPT ################################################
 
 

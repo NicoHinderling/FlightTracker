@@ -6,7 +6,7 @@ class FlightTrackerCluster(object):
         self.session = cluster.connect()
 
     def createKeySpace(self, title, class_type='SimpleStrategy', replication_factor='1'):
-        self.session.execute("CREATE KEYSPACE {} WITH REPLICATION = \
+        self.session.execute("CREATE KEYSPACE IF NOT EXISTS {} WITH REPLICATION = \
         {{ 'class' : '{}', 'replication_factor' : {} }};\
         ".format(title, class_type, replication_factor))
 

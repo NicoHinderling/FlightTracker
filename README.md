@@ -25,12 +25,15 @@ I have decided to choose two flights the day of December 19th (2015). I imagine 
 
 **Specific Tickets:**
 
-1.) BOS -> LAX (12/19/15)
+1.) BOS -> LAX (5/10/16)
 
-2.) NY -> MIA (12/19/15)
+2.) NYC -> MIA (5/10/16)
 
+3.) NYC -> SAN (5/10/16)
+
+4.) DFW -> SFO (5/10/16)
  
-(**August 9th, 2015:** _Data has begun being aggregated!_)
+(**UPDATE (January 7th, 2016):** _Data has begun being aggregated!_)
 
 #How to set this up Locally!
 

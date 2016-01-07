@@ -91,7 +91,7 @@ $ python worker.py
 
 and we're runnin', baby!
 
-**Sidenote:** If you want to _query_ your data, just open another tab and do `python queryCassandra.py`. I added this for the sake of convenience so doing a SQL `SELECT` command would be as simple as a bash command.
+**Sidenote:** I'm a cheater and currently use two Google accounts to have two unique QPX API keys. Feel free to follow my footsteps, but otherwise feel free to rip the remains of 'QPX_API_KEY_TWO'. Just beware that QPX delimits you to 50 free calls a day. Just keep in mind that this means if you're doing a call every hour, you'll only be able to aggregate on two different tickets (24 * 2 = 48 aka less than 50).
 
 #License
 MIT

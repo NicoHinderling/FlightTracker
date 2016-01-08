@@ -21,7 +21,7 @@ Some other possible variables that I may encorporate in the future could be:
 - (Feel free to suggest any others! :smile: )
 
 ### Metrics
-I have decided to choose two flights the day of December 19th (2015). I imagine this date should yield especially volatile prices, so it should be an interesting base line. 
+I have decided to choose four flights the day of May 10th (2016). I imagine this date should yield especially volatile prices, so it should be an interesting base line. 
 
 **Specific Tickets:**
 

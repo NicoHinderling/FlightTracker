@@ -14,16 +14,16 @@ class FlightTrackerCluster(object):
         self.session.set_keyspace('{}'.format(newkeyspace))
 
     def insertData(self, tableName, paramTypes, params):
-        for each in range(len(params)):
+        for each in range(len(params)-1):
             params[each] = '\'' + params[each] + '\''        
         parameterTypes = ', '.join(paramTypes)
         parameters = ', '.join(params)
         self.session.execute("INSERT INTO {} ({}) VALUES ({});".format(tableName, parameterTypes, parameters))
 
     def createTable(self, tableName, params, keyParams):
-        for each in range(len(params)):
+        for each in range(len(params)-1):
             params[each] += ' text'
-        #params[len(params)-1] += ' float' 		#Changed because price value comes as string
+        params[len(params)-1] += ' float' 		#Changed because price value comes as string
 	key = ', '.join(keyParams)
         params.append( ' PRIMARY KEY({})'.format(key))
         parameters = ', \n'.join(params)

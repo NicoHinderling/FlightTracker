@@ -34,13 +34,13 @@ def writeToCassandra(params, hour, date, day_of_week, origin, destination, depar
     response = requests.post(url, data=json.dumps(params), headers=headers)
     data = response.json()
     
-    #price = float(data['trips']['tripOption'][0]['saleTotal'])
-    #carrier = data['trips']['tripOption'][0]['slice'][0]['segment'][0]['flight']['carrier']
+    price = data['trips']['tripOption'][0]['saleTotal']
+    carrier = data['trips']['tripOption'][0]['slice'][0]['segment'][0]['flight']['carrier']
  
-    price = "100.20";
-    carrier = "placeholder";
+    #price = "100.20";
+    #carrier = "placeholder";
     
-    concat = hour + ", " + date + ", " +  day_of_week + ", " + str(price) + ", " + carrier + ", " + origin + ", " + destination + ", " + departure_date
+    concat = hour + ", " + date + ", " +  day_of_week + ", " + price + ", " + carrier + ", " + origin + ", " + destination + ", " + departure_date
     print concat + "    [" + concat + "]"
     myCluster.insertData('tickets', ['hour', 'date', 'day', 'carrier', 'origin', 'destination', 'departure_date', 'price'],
         [hour, date, day_of_week, carrier, origin, destination, departure_date, price])

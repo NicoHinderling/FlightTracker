@@ -16,7 +16,7 @@ myCluster.createKeySpace('plane')
 myCluster.changeKeySpace('plane')
 
 #Uncomment the first time to create the table
-myCluster.createTable('tickets', ['hour', 'date', 'day', 'carrier', 'origin', 'destination', 'departure_date', 'price'], ['day', 'date', 'origin', 'destination', 'price', 'hour'])
+#myCluster.createTable('tickets', ['hour', 'date', 'day', 'carrier', 'origin', 'destination', 'departure_date', 'price'], ['day', 'date', 'origin', 'destination', 'price', 'hour'])
 
 
 params_one = myCluster.getParams(ORIGIN_ONE, DESTINATION_ONE, DEPARTURE_DATE, 100)
@@ -34,11 +34,11 @@ def writeToCassandra(params, hour, date, day_of_week, origin, destination, depar
     response = requests.post(url, data=json.dumps(params), headers=headers)
     data = response.json()
     
-    #price = data['trips']['tripOption'][0]['saleTotal']
-    #carrier = data['trips']['tripOption'][0]['slice'][0]['segment'][0]['flight']['carrier']
+    price = data['trips']['tripOption'][0]['saleTotal']
+    carrier = data['trips']['tripOption'][0]['slice'][0]['segment'][0]['flight']['carrier']
  
-    price = "USD100.20";
-    carrier = "placeholder";
+    #price = "USD100.20";
+    #carrier = "placeholder";
     
     concat = hour + ", " + date + ", " +  day_of_week + ", " + price + ", " + carrier + ", " + origin + ", " + destination + ", " + departure_date
     print concat + "    [" + concat + "]"
